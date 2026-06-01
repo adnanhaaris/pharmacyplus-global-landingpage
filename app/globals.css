@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #099F93;
+  --secondary: #12344D;
+  --background: #FFFFF0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #FFFFF0;
+}
