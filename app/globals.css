@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 :root {
   --primary: #099F93;
   --secondary: #12344D;
@@ -21,3 +20,20 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #FFFFF0;
 }
+
+:root { --header-height: 4rem; } /* 64px */
+
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .categories-grid { grid-template-columns: 1fr !important; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .steps-grid { grid-template-columns: 1fr !important; }
+}
+
