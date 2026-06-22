@@ -22,18 +22,56 @@ body {
 }
 
 :root { --header-height: 4rem; } /* 64px */
-
-@media (max-width: 900px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .categories-grid { grid-template-columns: 1fr !important; }
-  .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+.hero-content {
+  margin-left: 340px;
 }
+ .faq-section {
+    margin-left: 400px;
+  }
+
+@media (max-width: 480px) {
+  .nav-logo-section {
+    width: 160px !important;
+  }
+}
+
 @media (max-width: 560px) {
   .benefits-grid {
     grid-template-columns: 1fr !important;
   }
   .steps-grid { grid-template-columns: 1fr !important; }
+   .nav-logo-section {
+    width: 160px !important;
+  }
 }
 
+@media (max-width: 700px) {
+  .hero-content {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    margin-left: 130px !important;
+  }
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .categories-grid { grid-template-columns: 1fr !important; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+ .nav-logo-section {
+    width: 160px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-content {
+    margin-left: 140px !important;
+  }
+    .faq-section {
+    margin-left: 100px !important;
+  }
+  
+}

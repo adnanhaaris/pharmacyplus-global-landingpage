@@ -80,23 +80,8 @@ export default function PricingPage() {
     <>
       <Navbar />
 
-      {/*
-       * FIX 1 — Navbar overlap root cause fix.
-       * The hero section cannot rely on internal pt-* to clear the navbar
-       * because the section background starts at top:0 (behind the fixed bar).
-       * Solution: add pt-16 (64px) to <main> as a single source of truth for
-       * navbar height clearance. Remove per-section pt-32/pt-36 overrides and
-       * replace them with section-specific vertical padding only.
-       * Adjust pt-16 → pt-[72px] if your navbar is taller than 64px.
-       */}
       <main className="pt-[var(--header-height)]">
 
-
-        {/* ─── HERO ────────────────────────────────────────────────────────────
-         * FIX: Removed pt-32/pt-36 (they were fighting the fixed navbar).
-         * Now pt-20/pb-24 is pure section breathing room only.
-         * The navbar clearance is handled by <main className="pt-16"> above.
-         * ─────────────────────────────────────────────────────────────────── */}
         <section style={{ backgroundColor: '#F3FAF9', position: 'relative', overflow: 'hidden' }}>
           {/* Ambient blobs */}
           <div aria-hidden style={{
@@ -195,21 +180,8 @@ export default function PricingPage() {
           }} />
         </section>
 
-        {/* ─── INGREDIENTS ─────────────────────────────────────────────────────
-         * FIX 4 — Layout rhythm & card design.
-         *
-         * Container: max-w-6xl with px-6 (same as hero uses relative to max-w-4xl
-         * so both flush to the same side gutters on wide screens).
-         *
-         * Cards: gap-8 → gap-6 lg:gap-8 for tighter but not cramped grid.
-         *   - Added min-h to equalize card heights via flex
-         *   - Stronger Rx code → icon → title → body hierarchy
-         *   - Icon container gets a subtle ring for depth
-         *   - Hover: combined border glow + lift + shadow for premium feel
-         * ─────────────────────────────────────────────────────────────────── */}
         <section style={{ padding: '50px' }}>
           <div className="mx-auto max-w-8xl">
-            {/* Section heading — left aligned, no subtitle shown */}
             <p className="text-xs font-semibold uppercase tracking-widest text-[#099F93] mb-2">
               What goes into your plan
             </p>
@@ -233,22 +205,15 @@ export default function PricingPage() {
                               hover:shadow-[0_8px_24px_rgba(9,159,147,0.10)]"
                     style={{ padding: '20px' }}
                   >
-                    {/* Rx code — top left, small teal */}
                     <span className="text-[11px] font-medium text-[#099F93] mb-4">
                       {item.code}
                     </span>
-
-                    {/* Icon — plain light teal box, no ring */}
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#099F93]/10 text-[#099F93] mb-6">
                       <Icon className="h-5 w-5" />
                     </div>
-
-                    {/* Title in teal */}
                     <h3 className="text-base font-semibold text-[#099F93] mb-2">
                       {item.title}
                     </h3>
-
-                    {/* Body in muted dark */}
                     <p className="text-sm leading-relaxed text-[#12344D]/55">
                       {item.description}
                     </p>
@@ -259,12 +224,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* ─── INCLUDED IN EVERY PLAN ──────────────────────────────────────────
-         * FIX 6 — Included band.
-         * Increased inner padding for more air.
-         * 4-col grid with wider gap so items aren't cramped on desktop.
-         * Check items get slightly larger text for readability.
-         * ─────────────────────────────────────────────────────────────────── */}
         <section className="border-y border-[#12344D]/8 bg-[#F3FAF9]">
           <div className="mx-auto max-w-8xl px-6 py-14 sm:py-20" style={{ padding: '20px', marginLeft: '50px' }}>
             <p className="text-center text-xs font-bold uppercase tracking-widest text-[#099F93]" style={{ paddingBottom: '10px' }}>
@@ -281,18 +240,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* ─── FAQ ─────────────────────────────────────────────────────────────
-         * FIX 7 — FAQ alignment and width.
-         *
-         * Root cause: max-w-3xl without mx-auto centering on the section
-         * wrapper made the accordion drift left on wide screens.
-         *
-         * Fix:
-         *  - Outer section: max-w-6xl centers the section in page flow.
-         *  - Inner content wrapper: max-w-2xl mx-auto constrains reading width
-         *    and keeps it optically centred.
-         *  - Added a subtle top divider line via the border-t on the section.
-         * ─────────────────────────────────────────────────────────────────── */}
         <section style={{ padding: '60px 50px', maxWidth: '860px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <p style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#099F93', marginBottom: '12px' }}>

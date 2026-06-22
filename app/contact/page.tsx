@@ -54,15 +54,15 @@ export default function ContactPage() {
         <section className="relative overflow-hidden bg-[#F3FAF9] style={{ minHeight: 'calc(100vh - 64px)' }}">
           <div aria-hidden className="pointer-events-none absolute -right-24 -top-32 h-96 w-96 rounded-full bg-[#099F93]/20 blur-3xl" />
          <div
-  className="relative mx-auto max-w-3xl px-6 pt-32 pb-20 text-center sm:pt-36 sm:pb-24"
+  className="hero-content relative mx-auto max-w-3xl px-6 pt-32 pb-20 text-center sm:pt-36 sm:pb-24"
   style={{
     marginTop: '70px',
     padding: '20px',
-    marginLeft: '340px',
+   
   }}
 >
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-[#099F93] shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-5 text-sm font-medium text-[#099F93] shadow-sm" style={{ padding: '5px 10px' }}>
                 Contact
               </span>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-[#12344D] sm:text-5xl">
@@ -77,7 +77,7 @@ export default function ContactPage() {
         </section>
 
         {/* GET IN TOUCH — info + form */}
-        <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <section className="mx-auto max-w-8xl px-6 py-20 sm:py-24" style={{ padding: '50px' }}>
           <div className="grid gap-12 lg:grid-cols-5">
             {/* Left: info */}
             <div className="lg:col-span-2">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                 title="We'd love to hear from you"
                 subtitle="Reach out through the form or any of the channels below. Our team responds within one business day."
               />
-              <div className="mt-8 space-y-4">
+              <div className="mt-8 flex flex-col gap-4">
                 {infoCards.map((c) => {
                   const Icon = c.icon
                   const body = (
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
             {/* Right: form */}
             <div className="lg:col-span-3">
-              <div className="rounded-2xl border border-[#12344D]/10 bg-white p-7 shadow-sm sm:p-9">
+              <div className="rounded-2xl border border-[#12344D]/10 bg-white p-7 shadow-sm sm:p-9" style={{ padding: '20px' }}>
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#099F93]/10 text-[#099F93]">
@@ -133,16 +133,16 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} noValidate>
                     <div className="grid gap-5 sm:grid-cols-2">
                       <Field id="name" label="Name" required>
-                        <input id="name" name="name" type="text" required placeholder="Your name" className={inputCls} />
+                        <input id="name" name="name" type="text" required placeholder="Your name" className={inputCls} style={{ padding: '10px' }} />
                       </Field>
                       <Field id="email" label="Email" required>
-                        <input id="email" name="email" type="email" required placeholder="you@example.com" className={inputCls} />
+                        <input id="email" name="email" type="email" required placeholder="you@example.com" className={inputCls} style={{ padding: '10px' }} />
                       </Field>
                       <Field id="company" label="Company Name">
-                        <input id="company" name="company" type="text" placeholder="Company name (optional)" className={inputCls} />
+                        <input id="company" name="company" type="text" placeholder="Company name (optional)" className={inputCls} style={{ padding: '10px' }} />
                       </Field>
                       <Field id="country" label="Country" required>
-                        <select id="country" name="country" required defaultValue="" className={`${inputCls} appearance-none`}>
+                        <select id="country" name="country" required defaultValue="" className={`${inputCls}  appearance-none`} style={{ padding: '10px' }}>
                           <option value="" disabled>Select your country</option>
                           {COUNTRIES.map((c) => (
                             <option key={`${c.iso2}-${c.dial}`} value={c.name}>{c.name}</option>
@@ -152,12 +152,12 @@ export default function ContactPage() {
                     </div>
 
                     <div className="mt-5">
-                      <PhoneField id="phone" name="phone" required label="Phone Number" onChange={(v) => setPhone(v)} />
+                      <PhoneField id="phone" name="phone" required label="Phone Number"  onChange={(v) => setPhone(v)} />
                     </div>
 
                     <div className="mt-5">
                       <Field id="message" label="Message" required>
-                        <textarea id="message" name="message" rows={4} required placeholder="How can we help you?" className={`${inputCls} resize-none`} />
+                        <textarea id="message" name="message" rows={4} required placeholder="How can we help you?" className={`${inputCls} resize-none`} style={{ padding: '10px' }} />
                       </Field>
                     </div>
 
@@ -177,8 +177,11 @@ export default function ContactPage() {
         </section>
 
         {/* OFFICE + MAP */}
-        <section className="border-y border-[#12344D]/10 bg-[#F3FAF9]">
-          <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <section
+          className="border-y border-[#12344D]/10 bg-[#F3FAF9]"
+          style={{ padding: '50px' }}
+        >
+          <div className="mx-auto max-w-8xl px-6 py-20 sm:py-24">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
                 <SectionHeading eyebrow="Visit us" title="Our office" />
@@ -192,7 +195,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-2xl border border-[#12344D]/10 shadow-sm">
+              <div className="overflow-hidden border-[#12344D]/10 shadow-sm">
                 <iframe
                   title="Office location map"
                   src={`https://www.google.com/maps?q=${MAP_QUERY}&output=embed`}
@@ -206,13 +209,13 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ + SUPPORT */}
-        <section className="mx-auto max-w-3xl px-6 py-20 sm:py-24">
+        <section className="faq-section mx-auto max-w-3xl px-6 py-20 sm:py-24" style={{ padding: '50px'}}>
           <SectionHeading eyebrow="FAQ" title="Common questions" align="center" />
-          <div className="mt-10">
+          <div className="mt-10" style={{ marginBlock: '20px' }}>
             <FaqAccordion items={faqs} />
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-[#12344D]/10 bg-[#F3FAF9] p-7 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl border border-[#12344D]/10 bg-[#F3FAF9] p-7 sm:flex-row" style={{ padding: '10px' }}>
             <div className="flex items-center gap-4">
               <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-[#099F93]/10 text-[#099F93]">
                 <LifeBuoy className="h-5 w-5" />
@@ -224,7 +227,7 @@ export default function ContactPage() {
             </div>
             <a
               href="#"
-              className="inline-flex h-11 flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-[#099F93] px-6 text-sm font-semibold text-white transition hover:bg-[#08887e]"
+              className="inline-flex h-11 flex-shrink-0 items-center justify-center gap-2 rounded-xl bg-[#099F93] px-6 text-sm font-semibold text-white transition hover:bg-[#08887e]" style={{ padding: '10px' }}
             >
               Visit Help Center
               <ArrowRight className="h-4 w-4" />

@@ -109,7 +109,7 @@ export default function PartnersPage() {
         <section className="relative overflow-hidden bg-[#12344D] style={{ minHeight: 'calc(100vh - 64px)' }}>">
           <div aria-hidden className="pointer-events-none absolute -right-24 -top-28 h-96 w-96 rounded-full bg-[#099F93]/30 blur-3xl" />
           <div aria-hidden className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-[#099F93]/15 blur-3xl" />
-          <div className="relative mx-auto max-w-5xl px-6 py-24 text-center sm:py-28" style={{ marginTop: '100px', marginLeft: '260px', padding: '20px' }}>
+          <div className="relative mx-auto max-w-8xl px-6 py-24 text-center sm:py-28" style={{ marginTop: '100px', padding: '20px' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-sm font-medium text-white">
                 PharmacyPlus Partner Program
@@ -117,7 +117,7 @@ export default function PartnersPage() {
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Grow your business with PharmacyPlus
               </h1>
-              <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/70" style={{marginLeft: '120px', paddingBottom: '20px'}}>
+              <p className="mx-auto mt-5 max-w-8xl text-lg leading-relaxed text-white/70" style={{paddingBottom: '20px'}}>
                 Join our global partner network and help pharmacies transform their operations
                 with a modern pharmacy management platform.
               </p>

@@ -164,9 +164,9 @@ function MegaDropdown({ menuKey }: { menuKey: string }) {
           boxShadow: '0 8px 40px rgba(0,0,0,0.08)',
         }}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8" style={{ marginLeft: '450px' }}>
           <div
-            className="grid gap-6 py-10"
+            className="grid py-10"
             style={{ gridTemplateColumns: `repeat(${data.columns.length}, minmax(0, 1fr))` }}
           >
             {data.columns.map((col) => (
@@ -187,7 +187,7 @@ function MegaDropdown({ menuKey }: { menuKey: string }) {
                       >
                         <Link
                           href={item.href ?? '#'}
-                          className="group flex items-start gap-3 rounded-2xl px-3 py-3 transition-all duration-200 hover:bg-[#f8fafc]"
+                          className="group flex items-start gap-3 rounded-2xl px-3 py-3 transition-all duration-200 hover:bg-[#f8fafc]" style={{ padding: '10px' }}
                         >
                           <div
                             className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl transition-transform duration-150 group-hover:scale-110"
@@ -363,7 +363,7 @@ export default function Navbar() {
        <div className="flex h-16 w-full items-center px-6 lg:px-12">
 
           {/* Logo */}
-          <div className="flex-none" style={{ width: '220px', display: 'flex', justifyContent: 'flex-end' }}>
+          <div className="nav-logo-section flex-none" style={{ width: '220px', display: 'flex', justifyContent: 'flex-end' }}>
             <Link href="/" className="flex flex-shrink-0 items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-xl" style={{ background: '#099F93' }}>
                 <Plus size={16} color="white" strokeWidth={2.8} />

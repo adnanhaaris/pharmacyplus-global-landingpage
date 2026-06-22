@@ -88,7 +88,7 @@ export default function PhoneField({
       )}
 
       <div ref={wrapRef} className="relative">
-        <div className="flex rounded-xl border border-[#12344D]/15 bg-white transition focus-within:border-[#099F93] focus-within:ring-2 focus-within:ring-[#099F93]/20">
+        <div className="flex rounded-xl border border-[#12344D]/15 bg-white transition focus-within:border-[#099F93] focus-within:ring-2 focus-within:ring-[#099F93]/20" style={{ padding: '10px' }}>
           {/* Country selector trigger */}
           <button
             type="button"
@@ -132,7 +132,7 @@ export default function PhoneField({
         {open && (
           <div
             role="listbox"
-            className="absolute left-0 right-0 z-30 mt-2 overflow-hidden rounded-xl border border-[#12344D]/10 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)]"
+            className="absolute left-0 right-0 z-30 mt-2 overflow-hidden rounded-xl border border-[#12344D]/10 bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)]" style={{padding: '10px' }}
           >
             <div className="flex items-center gap-2 border-b border-[#12344D]/10 px-3 py-2.5">
               <Search className="h-4 w-4 flex-shrink-0 text-[#12344D]/40" />

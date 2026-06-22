@@ -31,7 +31,7 @@ export default function SectionHeading({
       className={`${isCenter ? 'mx-auto max-w-2xl text-center' : 'max-w-xl'} ${className}`}
     >
       {eyebrow && (
-        <p className="text-sm font-semibold uppercase tracking-wide text-[#099F93]">
+        <p className="text-sm font-semibold uppercase tracking-wide text-[#099F93] ">
           {eyebrow}
         </p>
       )}
@@ -40,7 +40,7 @@ export default function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`mt-4 text-base leading-relaxed text-[#12344D]/70 sm:text-lg ${
+          className={`mt-4 text-base leading-relaxed text-[#12344D]/70 sm:text-base ${
             isCenter ? 'mx-auto max-w-2xl' : ''
           }`}
         >
